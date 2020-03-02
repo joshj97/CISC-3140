@@ -1,0 +1,368 @@
+Question 1: 
+
+Filter 1 column from a CSV file.
+Extract out the artist names from the CSV file that can be downloaded from the Spotify Charts website (https://spotifycharts.com/regional). Ensure that the artist names are unique and sorted. 
+Retain the header as the top of the file.
+---------------------------------------------------------------
+Joshs-MacBook-Pro:~ josh$ cd desktop
+Joshs-MacBook-Pro:desktop josh$ ls
+3d Logo.jpg
+Final Cut Pro.app
+House of Entertainment Social Media-Twitter.jpg
+Jason Basketball 
+Nehal GoProp
+Projects
+SAMTBrackets2020.png
+Screen Shot 2020-02-21 at 5.11.39 PM.png
+Screen Shot 2020-02-21 at 5.12.08 PM.png
+Screen Shot 2020-02-25 at 1.17.45 PM.png
+Screen Shot 2020-02-25 at 9.56.33 AM.png
+Screen Shot 2020-02-25 at 9.57.37 AM.png
+Screen Shot 2020-02-25 at 9.59.22 AM.png
+h2-1.4.200(1).jar
+ml-latest-small
+ml-latest-small.zip
+top-artist.csv
+Joshs-MacBook-Pro:desktop josh$ cat top-artist.csv
+Position,Artist
+1,The Weeknd
+2,Roddy Ricch
+3,Tones and I
+4,Dua Lipa
+5,Bad Bunny
+6,Bad Bunny
+7,Justin Bieber
+8,KAROL G
+9,Bad Bunny
+10,Trevor Daniel
+11,Arizona Zervas
+12,Doja Cat
+13,Bad Bunny
+14,Bad Bunny
+15,Lady Gaga
+16,Justin Bieber
+17,Billie Eilish
+18,Bad Bunny
+19,Post Malone
+20,Future
+21,Lewis Capaldi
+22,Billie Eilish
+23,Maroon 5
+24,Bad Bunny
+25,Surfaces
+26,Eminem
+27,Harry Styles
+28,The Weeknd
+29,Lil Mosey
+30,Billie Eilish
+31,SAINt JHN
+32,Bad Bunny
+33,Bad Bunny
+34,Bad Bunny
+35,Shawn Mendes
+36,Powfu
+37,Lewis Capaldi
+38,Halsey
+39,Black Eyed Peas
+40,Dimelo Flow
+41,Camila Cabello
+42,Bad Bunny
+43,Residente
+44,J Balvin
+45,Dua Lipa
+46,J Balvin
+47,Bad Bunny
+48,Bad Bunny
+49,Ashe
+50,Bad Bunny
+51,Bad Bunny
+52,Bad Bunny
+53,Roddy Ricch
+54,Bad Bunny
+55,MEDUZA
+56,Bad Bunny
+57,Dalex
+58,Justin Bieber
+59,Regard
+60,BTS
+61,Sam Smith
+62,Post Malone
+63,Myke Towers
+64,Bad Bunny
+65,Anuel AA
+66,Ed Sheeran
+67,Jack Harlow
+68,blackbear
+69,Bad Bunny
+70,Lil Baby
+71,Nicky Jam
+72,Dan + Shay
+73,YNW Melly
+74,Ali Gatie
+75,Jonas Brothers
+76,BROCKHAMPTON
+77,J Balvin
+78,Billie Eilish
+79,Lil Baby
+80,Mustard
+81,BTS
+82,Lil Uzi Vert
+83,Rauw Alejandro
+84,Bad Bunny
+85,Anuel AA
+86,Ed Sheeran
+87,Billie Eilish
+88,Lady Gaga
+89,Jhay Cortez
+90,Juice WRLD
+91,Travis Scott
+92,Khalid
+93,Selena Gomez
+94,JP Saxe
+95,DaBaby
+96,Shakira
+97,Selena Gomez
+98,SZA
+99,24kGoldn
+100,Harry Styles
+101,Rauw Alejandro
+102,Ariana Grande
+103,Ali Gatie
+104,Y2K
+105,Juice WRLD
+106,Don Toliver
+107,Harry Styles
+108,Lil Baby
+109,J Balvin
+110,Tones and I
+111,BTS
+112,Alan Walker
+113,Lil Nas X
+114,Post Malone
+115,Marshmello
+116,JACKBOYS
+117,Selena Gomez
+118,Polo G
+119,DaBaby
+120,Imagine Dragons
+121,Queen
+122,Post Malone
+123,Lil Tecca
+124,Jhay Cortez
+125,Sam Smith
+126,The Weeknd
+127,Lewis Capaldi
+128,Tyga
+129,Lil Baby
+130,Nicky Jam
+131,Halsey
+132,Jonas Brothers
+133,BTS
+134,Post Malone
+135,Kina
+136,A Boogie Wit da Hoodie
+137,Ed Sheeran
+138,BTS
+139,James Arthur
+140,Billie Eilish
+141,Lil Baby
+142,Juice WRLD
+143,Daddy Yankee
+144,XXXTENTACION
+145,Dalex
+146,Myke Towers
+147,Drake
+148,XXXTENTACION
+149,Ed Sheeran
+150,Daddy Yankee
+151,G-Eazy
+152,Lunay
+153,Travis Scott
+154,Arcangel
+155,Lizzo
+156,Ed Sheeran
+157,Tainy
+158,Harry Styles
+159,Lunay
+160,DaBaby
+161,Conan Gray
+162,Henrique & Juliano
+163,Kina
+164,Sam Smith
+165,Noah Cyrus
+166,Maroon 5
+167,TOKYO??S REVENGE
+168,benny blanco
+169,Ava Max
+170,Lauv
+171,J Balvin
+172,Ariana Grande
+173,MEDUZA
+174,Lauv
+175,XXXTENTACION
+176,BTS
+177,Lil Uzi Vert
+178,Travis Scott
+179,Ellie Goulding
+180,5 Seconds of Summer
+181,K CAMP
+182,John Legend
+183,Post Malone
+184,Lizzo
+185,Billie Eilish
+186,Rich Music LTD
+187,Pop Smoke
+188,BTS
+189,blackbear
+190,Apache 207
+191,SHAED
+192,Bazzi
+193,Future
+194,Niall Horan
+195,The Weeknd
+196,BTS
+197,Stormzy
+198,BTS
+199,Sech
+200,Panic! At The DiscoJoshs-MacBook-Pro:desktop josh$ 
+---------------------------------------------------------------
+I also thought I would organize it according to the Top Ten artist based on the CSV file: I simply used the command 'head -n 11 top-artist.csv'. 
+
+Joshs-MacBook-Pro:desktop josh$ head -n 11 top-artist.csv
+Position,Artist
+1,The Weeknd
+2,Roddy Ricch
+3,Tones and I
+4,Dua Lipa
+5,Bad Bunny
+6,Bad Bunny
+7,Justin Bieber
+8,KAROL G
+9,Bad Bunny
+10,Trevor Daniel
+Joshs-MacBook-Pro:desktop josh$ 
+-----------------------------------------------------------------------------
+Question 2: 
+
+Download a zip file from MovieLens (https://grouplens.org/datasets/movielens/latest/) using 
+the command line interface (CLI) such as curl or wget and unzip the .
+zip file. It would be okay to choose the smallest (recent data) dataset.
+---------------------------------------------------------------
+Joshs-MacBook-Pro:~ josh$ cd desktop
+Joshs-MacBook-Pro:desktop josh$ ls
+3d Logo.jpg
+Final Cut Pro.app
+House of Entertainment Social Media-Twitter.jpg
+Jason Basketball 
+Nehal GoProp
+Projects
+SAMTBrackets2020.png
+Screen Shot 2020-02-21 at 5.11.39 PM.png
+Screen Shot 2020-02-21 at 5.12.08 PM.png
+Screen Shot 2020-02-25 at 1.17.45 PM.png
+Screen Shot 2020-02-25 at 9.56.33 AM.png
+Screen Shot 2020-02-25 at 9.57.37 AM.png
+Screen Shot 2020-02-25 at 9.59.22 AM.png
+h2-1.4.200(1).jar
+ml-latest-small
+ml-latest-small.zip
+top-artist.csv
+Joshs-MacBook-Pro:desktop josh$ unzip ml-latest-small.zip
+inflating: ml-latest-small/links.csv
+inflating: ml-latest-small/tags.csv  
+inflating: ml-latest-small/ratings.csv  
+inflating: ml-latest-small/README.txt  
+inflating: ml-latest-small/movies.csv  
+---------------------------------------------------------------
+Joshs-MacBook-Pro:desktop josh$ cd ml-latest-small
+Joshs-MacBook-Pro:ml-latest-small josh$ ls
+README.txt	links.csv	movies.csv	ratings.csv	tags.csv
+Joshs-MacBook-Pro:ml-latest-small josh$ 
+-----------------------------------------------------------------------------
+Question 3: 
+
+Preview the first 12 lines of the movies.csv file and the last 4 lines of that same csv file.
+---------------------------------------------------------------
+
+Last login: Mon Mar  2 11:48:48 on ttys000
+Joshs-MacBook-Pro:~ josh$ ls
+Assign2.mv.db		HW1.trace.db		Pictures
+Assign2.trace.db	IdeaProjects		Public
+Desktop			Lecture3.mv.db		PycharmProjects
+Documents		Lecture3.trace.db	mysql
+Downloads		Library			sunflower.jpg
+Dropbox			Movies			test.mv.db
+HW1.mv.db		Music			test.trace.db
+Joshs-MacBook-Pro:~ josh$ cd Desktop
+Joshs-MacBook-Pro:Desktop josh$ ls
+3d Logo.jpg
+Final Cut Pro.app
+House of Entertainment Social Media-Twitter.jpg
+Jason Basketball 
+Nehal GoProp
+Projects
+SAMTBrackets2020.png
+Screen Shot 2020-02-21 at 5.11.39 PM.png
+Screen Shot 2020-02-21 at 5.12.08 PM.png
+Screen Shot 2020-02-25 at 1.17.45 PM.png
+Screen Shot 2020-02-25 at 9.56.33 AM.png
+Screen Shot 2020-02-25 at 9.57.37 AM.png
+Screen Shot 2020-02-25 at 9.59.22 AM.png
+h2-1.4.200(1).jar
+ml-latest-small.zip
+Joshs-MacBook-Pro:Desktop josh$ unzip ml-latest-small.zip
+Archive:  ml-latest-small.zip
+   creating: ml-latest-small/
+  inflating: ml-latest-small/links.csv  
+  inflating: ml-latest-small/tags.csv  
+  inflating: ml-latest-small/ratings.csv  
+  inflating: ml-latest-small/README.txt  
+  inflating: ml-latest-small/movies.csv  
+Joshs-MacBook-Pro:Desktop josh$ head -n 13 movies.csv
+head: movies.csv: No such file or directory
+Joshs-MacBook-Pro:Desktop josh$ ls
+3d Logo.jpg
+Final Cut Pro.app
+House of Entertainment Social Media-Twitter.jpg
+Jason Basketball 
+Nehal GoProp
+Projects
+SAMTBrackets2020.png
+Screen Shot 2020-02-21 at 5.11.39 PM.png
+Screen Shot 2020-02-21 at 5.12.08 PM.png
+Screen Shot 2020-02-25 at 1.17.45 PM.png
+Screen Shot 2020-02-25 at 9.56.33 AM.png
+Screen Shot 2020-02-25 at 9.57.37 AM.png
+Screen Shot 2020-02-25 at 9.59.22 AM.png
+h2-1.4.200(1).jar
+ml-latest-small
+ml-latest-small.zip
+Joshs-MacBook-Pro:Desktop josh$ cd ml-latest-small
+Joshs-MacBook-Pro:ml-latest-small josh$ ls
+README.txt	links.csv	movies.csv	ratings.csv	tags.csv
+Joshs-MacBook-Pro:ml-latest-small josh$ head -n 13 movies.csv
+movieId,title,genres
+1,Toy Story (1995),Adventure|Animation|Children|Comedy|Fantasy
+2,Jumanji (1995),Adventure|Children|Fantasy
+3,Grumpier Old Men (1995),Comedy|Romance
+4,Waiting to Exhale (1995),Comedy|Drama|Romance
+5,Father of the Bride Part II (1995),Comedy
+6,Heat (1995),Action|Crime|Thriller
+7,Sabrina (1995),Comedy|Romance
+8,Tom and Huck (1995),Adventure|Children
+9,Sudden Death (1995),Action
+10,GoldenEye (1995),Action|Adventure|Thriller
+11,"American President, The (1995)",Comedy|Drama|Romance
+12,Dracula: Dead and Loving It (1995),Comedy|Horror
+Joshs-MacBook-Pro:ml-latest-small josh$ 
+---------------------------------------------------------------
+For the last 4 lines I used 'tail -n 5 movies.csv' to get last 4 movies
+ 
+Joshs-MacBook-Pro:ml-latest-small josh$ tail -n 5 movies.csv
+193581,Black Butler: Book of the Atlantic (2017),Action|Animation|Comedy|Fantasy
+193583,No Game No Life: Zero (2017),Animation|Comedy|Fantasy
+193585,Flint (2017),Drama
+193587,Bungo Stray Dogs: Dead Apple (2018),Action|Animation
+193609,Andrew Dice Clay: Dice Rules (1991),Comedy
+Joshs-MacBook-Pro:ml-latest-small josh$ 
+-----------------------------------------------------------------------------
