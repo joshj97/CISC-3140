@@ -1,0 +1,6 @@
+define (thirds . args)
+    (if (= (length args) 1)
+        (let ((lst (car args)))
+            (cond ... 
+                ))
+        (display "Error!")))
