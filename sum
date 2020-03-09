@@ -1,0 +1,11 @@
+(define (sumnums mylist)
+
+(if(null? mylist)
+
+0
+
+(+(car mylist)(sumnums(cdr mylist)))))
+
+
+
+(sumnums (list 4 4 1 1 1))
