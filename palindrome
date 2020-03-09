@@ -4,7 +4,5 @@
 
 (equal? chars(reverse chars))))
 
-
-
 (palindrome “hannah")
 
