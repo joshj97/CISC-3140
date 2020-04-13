@@ -50,3 +50,4 @@ for drink in drinks_list["drinks"] :
 f.write("</table></body></html>")
 f.close()
 print(" Drink list is printed in HTML file : list.html")
+
